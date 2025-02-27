@@ -9,8 +9,6 @@ hid_gamepad_report_t gp;
 #define VRX_PIN  A1 // Arduino pin connected to VRX pin
 #define VRY_PIN  A2 // Arduino pin connected to VRY pin
 #define BAT A3
-int xValue = 0; // To store value of the X axis
-int yValue = 0; // To store value of the Y axis
 
 const int16_t analogRange = 940;         // analog input range. default: 4096 for 3.3v ADC
 const int Xdeadzone = 20;                  // Deadzone percentage
@@ -111,5 +109,5 @@ void loop()
       gp.x = xValue;
       gp.y = yValue;
       blegamepad.report(&gp);
-      delay:(delayBetweenHIDReports);
+      delay(delayBetweenHIDReports);
 }
